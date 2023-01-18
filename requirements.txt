@@ -1,0 +1,4 @@
+pytest==7.2.1
+pypdf2==2.11.2
+openpyxl==3.0.10
+selene==2.0.0b16
