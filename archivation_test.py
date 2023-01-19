@@ -24,6 +24,7 @@ def test_xlsx():
         sheet = workbook.active
         check_value = str(sheet.cell(row=3, column=2).value)
         assert check_value == 'Mara'
+        os.remove('file_example_XLSX_50.xlsx')
 
 
 def test_csv():
@@ -37,3 +38,12 @@ def test_pdf():
         arch.extract('Lapin_giftcard.pdf')
         text = PdfReader('Lapin_giftcard.pdf').pages[0].extract_text()
         assert text.__contains__('Открытка')
+        os.remove('Lapin_giftcard.pdf')
+
+
+def test_zip_deleted():
+    os.remove(zip_path)
+    assert len(os.listdir(files_path)) == 3
+
+
+
